@@ -125,7 +125,7 @@ public class JdkHelper {
     }
 
     private void verifyJdk(File jdkExtractDirectory, Jdk jdk) throws MojoExecutionException {
-        String algo = Algorithm.SHA_256.formatted();
+        String algo = jdk.getChecksumType();
         String checksum = jdk.getChecksum();
         if (checksum.contains("/")) {
             String[] parts = checksum.split("/");
